@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="48dp">
+
+        <TextView
+            android:id="@+id/tvMontoTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Monto total: S/. 0.00"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seleccione método de pago:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/rgTipoPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rbTarjeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tarjeta" />
+
+            <RadioButton
+                android:id="@+id/rbYapePlin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yape/Plin" />
+        </RadioGroup>
+
+        <!-- Campos Tarjeta -->
+        <LinearLayout
+            android:id="@+id/layoutTarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="16dp">
+
+            <EditText
+                android:id="@+id/etNumeroTarjeta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Número de tarjeta"
+                android:inputType="number"
+                android:maxLength="16" />
+
+            <EditText
+                android:id="@+id/etCVV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="CVV"
+                android:inputType="numberPassword"
+                android:maxLength="3"
+                android:layout_marginTop="8dp" />
+
+            <EditText
+                android:id="@+id/etVencimiento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vencimiento (MM/AA)"
+                android:inputType="datetime"
+                android:maxLength="5"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Campos Yape/Plin -->
+        <LinearLayout
+            android:id="@+id/layoutYapePlin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingTop="16dp">
+
+            <EditText
+                android:id="@+id/etNumeroCelular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Número de celular"
+                android:inputType="phone"
+                android:maxLength="9" />
+
+            <EditText
+                android:id="@+id/etCodigoAprobacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Código de aprobación (6 dígitos)"
+                android:inputType="number"
+                android:maxLength="6"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnConfirmarPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmar pago"
+            android:layout_marginTop="24dp" />
+    </LinearLayout>
+</ScrollView>
